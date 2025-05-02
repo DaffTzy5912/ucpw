@@ -1,0 +1,46 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Admin Polling</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="form-container">
+    <h1>Tambah Polling</h1>
+    <form id="pollForm">
+      <input type="text" id="question" placeholder="Pertanyaan polling..." required />
+      <input type="text" id="option1" placeholder="Opsi 1" required />
+      <input type="text" id="option2" placeholder="Opsi 2" required />
+      <input type="text" id="option3" placeholder="Opsi 3" required />
+      <button type="submit">Tambah Polling</button>
+    </form>
+    <p>*Untuk menyimpan, kamu perlu push ke GitHub atau simpan data.json secara manual.</p>
+  </div>
+  <script>
+    document.getElementById('pollForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const question = document.getElementById('question').value;
+      const options = [
+        document.getElementById('option1').value,
+        document.getElementById('option2').value,
+        document.getElementById('option3').value
+      ];
+
+      const newPoll = {
+        id: Date.now(),
+        question,
+        options,
+        votes: [0, 0, 0]
+      };
+
+      fetch('https://api.jsonbin.io/v3/b/65f9a1b7e4b0d8f0a0bfae3c', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(newPoll)
+      }).then(() => alert('Polling berhasil dikirim!'));
+    });
+  </script>
+</body>
+</html>
