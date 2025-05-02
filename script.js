@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const pollsContainer = document.getElementById('polls');
 
   // Ganti URL ini dengan link ke data.json di GitHub RAW
-  fetch('https://raw.githubusercontent.com/namamu/polling-whatsapp/main/data.json')
+  fetch('https://raw.githubusercontent.com/dafftzy5912/ucpw/main/data.json')
     .then(res => res.json())
     .then(polls => {
       polls.forEach(poll => {
