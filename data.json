@@ -4,5 +4,11 @@
     "question": "Apa makanan favoritmu?",
     "options": ["Nasi Goreng", "Sate", "Bakso"],
     "votes": [0, 0, 0]
+  },
+  {
+    "id": 1712345678901,
+    "question": "Apa warna favoritmu?",
+    "options": ["Merah", "Biru", "Hijau"],
+    "votes": [0, 0, 0]
   }
 ]
